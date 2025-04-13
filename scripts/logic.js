@@ -34,4 +34,8 @@ class BankAccount {
         this.ownerName = ownerName;
         this.initialBalance = initialBalance;
     }
+
+    deposit(amount){
+        this.initialBalance += amount;
+    }
 }
