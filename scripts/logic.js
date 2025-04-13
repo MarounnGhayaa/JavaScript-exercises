@@ -59,6 +59,12 @@ class BankAccount {
     }
 
     getSummary() {
-        return this.ownerName + "'s balance is " + this.initialBalance;
+        return this.ownerName + "'s balance is $" + this.initialBalance;
     }    
 }
+
+const acc1 = new BankAccount("John", 500);
+const acc2 = new BankAccount("Sara", 300); 
+acc1.transferTo(acc2, 200); 
+console.log(acc1.getSummary()); // John's balance is $300 
+console.log(acc2.getSummary()); // Sara's balance is $500 
