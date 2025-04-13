@@ -4,6 +4,7 @@ const students = [
     { name: "Charlie", scores: [100, 100, 100] }
   ];
 function generateReports(students){
+    const reports = []
     for (const student of students) {
         const avg = (student.scores[0] + student.scores[1] + student.scores[2])/3;
         if (avg >= 90) {
@@ -21,7 +22,9 @@ function generateReports(students){
         else {
             grade = "F"
         }
-        console.log( "name: " + student.name + " average: " + avg + " grade: " + grade)
+        const report = { name: student.name, average: avg, grade: grade };
+        reports.push(report)
     }
+    return reports
 }
-generateReports(students)
+console.log(generateReports(students))
