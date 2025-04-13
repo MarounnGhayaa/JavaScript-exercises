@@ -47,4 +47,14 @@ class BankAccount {
             print("Insufficient balance")
         }
     }
+
+    transferTo(anotherAccount, amount){
+        if (this.initialBalance > amount) {
+            this.initialBalance -= amount
+            anotherAccount.deposit(amount)
+        }
+        else {
+            print("Insufficient balance")
+        }
+    }
 }
