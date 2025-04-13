@@ -44,7 +44,7 @@ class BankAccount {
             this.initialBalance -= amount
         }
         else {
-            print("Insufficient balance")
+            console.log("Insufficient balance")
         }
     }
 
@@ -54,7 +54,7 @@ class BankAccount {
             anotherAccount.deposit(amount)
         }
         else {
-            print("Insufficient balance")
+            console.log("Insufficient balance")
         }
     }
 }
