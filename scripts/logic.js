@@ -40,7 +40,7 @@ class BankAccount {
     }
 
     withdraw(amount){
-        if (this.initialBalance > amount) {
+        if (this.initialBalance >= amount) {
             this.initialBalance -= amount
         }
         else {
@@ -49,7 +49,7 @@ class BankAccount {
     }
 
     transferTo(anotherAccount, amount){
-        if (this.initialBalance > amount) {
+        if (this.initialBalance >= amount) {
             this.initialBalance -= amount
             anotherAccount.deposit(amount)
         }
@@ -57,4 +57,8 @@ class BankAccount {
             console.log("Insufficient balance")
         }
     }
+
+    getSummary() {
+        return this.ownerName + "'s balance is " + this.initialBalance;
+    }    
 }
