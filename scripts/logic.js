@@ -28,3 +28,10 @@ function generateReports(students){
     return reports
 }
 console.log(generateReports(students))
+
+class BankAccount {
+    constructor (ownerName, initialBalance) {
+        this.ownerName = ownerName;
+        this.initialBalance = initialBalance;
+    }
+}
