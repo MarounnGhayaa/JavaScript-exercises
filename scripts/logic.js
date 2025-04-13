@@ -38,4 +38,13 @@ class BankAccount {
     deposit(amount){
         this.initialBalance += amount;
     }
+
+    withdraw(amount){
+        if (this.initialBalance > amount) {
+            this.initialBalance -= amount
+        }
+        else {
+            print("Insufficient balance")
+        }
+    }
 }
