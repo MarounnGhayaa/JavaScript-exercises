@@ -98,9 +98,13 @@ acc1.printHistory();
 
 function addTask() {
     const taskInput = document.getElementById("inputTask");
-    const newTask = document.createElement("li");
-    newTask.textContent = taskInput.value;
-    const taskRow = document.getElementById("tasksTable");
-    taskRow.appendChild(newTask);
-    taskInput.value = "";
+    if (taskInput.value != "") {
+        const newTask = document.createElement("li");
+        newTask.textContent = taskInput.value;
+        const taskRow = document.getElementById("tasksTable");
+        taskRow.appendChild(newTask);
+        taskInput.value = "";
+    } else {
+        console.log("No tasks added.");
+    }
 }
