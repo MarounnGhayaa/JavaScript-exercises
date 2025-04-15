@@ -102,4 +102,5 @@ function addTask() {
     newTask.textContent = taskInput.value;
     const taskRow = document.getElementById("tasksTable");
     taskRow.appendChild(newTask);
+    taskInput.value = "";
 }
