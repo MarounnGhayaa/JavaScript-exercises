@@ -71,3 +71,9 @@ body {
   .task-list li:hover {
     background: #e0e0e0;
   }
+
+  .task-list li.clicked-li {
+    color: lightgreen;
+    background-color: gray;
+    text-decoration: underline;
+  }

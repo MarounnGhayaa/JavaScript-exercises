@@ -103,6 +103,9 @@ function addTask() {
         newTask.textContent = taskInput.value;
         const taskRow = document.getElementById("tasksTable");
         taskRow.appendChild(newTask);
+        newTask.addEventListener("click", function() {
+            newTask.classList.toggle("clicked-li");
+        });
         taskInput.value = "";
     } else {
         alert("No tasks added.");
