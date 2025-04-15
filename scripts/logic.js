@@ -95,3 +95,11 @@ acc1.transferTo(acc2, 200);
 console.log(acc1.getSummary()); // John's balance is $300, O(1)
 console.log(acc2.getSummary()); // Sara's balance is $500, O(1) 
 acc1.printHistory();
+
+function addTask() {
+    const taskInput = document.getElementById("inputTask");
+    const newTask = document.createElement("li");
+    newTask.textContent = taskInput.value;
+    const taskRow = document.getElementById("tasksTable");
+    taskRow.appendChild(newTask);
+}
