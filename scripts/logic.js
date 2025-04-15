@@ -105,6 +105,6 @@ function addTask() {
         taskRow.appendChild(newTask);
         taskInput.value = "";
     } else {
-        console.log("No tasks added.");
+        alert("No tasks added.");
     }
 }
