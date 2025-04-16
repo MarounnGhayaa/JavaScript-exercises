@@ -3,34 +3,34 @@ const students = [
     { name: "Bob", scores: [70, 68, 72] },
     { name: "Charlie", scores: [100, 100, 100] }
   ];
-//O(1) * O(n) = O(n)
+/* O(1) * O(n) = O(n)
 function generateReports(students){
     //O*(1)
     const reports = []
     //O(n) where n is the number of students
     for (const student of students) {
-        const avg = (student.scores[0] + student.scores[1] + student.scores[2])/3;
+        const average = (student.scores[0] + student.scores[1] + student.scores[2])/3;
         //O(1)
-        if (avg >= 90) {
+        if (average >= 90) {
             grade = "A"
         }
         //O(1)
-        else if (avg >= 80) {
+        else if (average >= 80) {
             grade = "B"
         }
         //O(1)
-        else if (avg >= 70) {
+        else if (average >= 70) {
             grade = "C"
         }
         //O(1)
-        else if (avg >= 60) {
+        else if (average >= 60) {
             grade = "D"
         }
         //O(1)
         else {
             grade = "F"
         }
-        const report = { name: student.name, average: avg, grade: grade };
+        const report = { name: student.name, average: average, grade: grade };
         //O(1) because adding a report occurs without iterating through reports
         reports.push(report)
     }
@@ -38,7 +38,44 @@ function generateReports(students){
     return reports
 }
 //O(1) printing
-console.log(generateReports(students))
+console.log(generateReports(students)) */
+
+//Generating reports using .map and .forEach, O(n) * O(1) = O(n)
+function generateReports(students) {
+    //O(n)
+    return students.map(student => {
+        let total = 0;
+        //O(1) because the scores number is fixed
+        student.scores.forEach(score => {
+            total += score;
+        });
+  
+        const average = total / student.scores.length;
+        if (average >= 90) {
+            grade = "A"
+        }
+        //O(1)
+        else if (average >= 80) {
+            grade = "B"
+        }
+        //O(1)
+        else if (average >= 70) {
+            grade = "C"
+        }
+        //O(1)
+        else if (average >= 60) {
+            grade = "D"
+        }
+        //O(1)
+        else {
+            grade = "F"
+        }
+        //O(1)                
+        return { name: student.name, average, grade };
+    });
+  }
+  //O(1)
+  console.log(generateReports(students));
 
 class BankAccount {
     //O(1)
