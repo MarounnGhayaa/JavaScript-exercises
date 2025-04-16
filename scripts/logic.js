@@ -148,3 +148,5 @@ function addTask() {
         alert("No tasks added.");
     }
 }
+const addButton = document.getElementById("addTask");
+addButton.addEventListener("click", addTask);
